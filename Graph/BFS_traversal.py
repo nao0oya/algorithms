@@ -41,7 +41,7 @@ class BFSOperator:
             # キューの中から0番目を抜き出す
             # 抜き出した値をprintする
             s = queue.pop(0)
-            print(s, end=" ")
+            # print(s, end=" ")
             self.output.append(s)
 
             # 現在の頂点に隣接するすべての頂点の番号を取得する

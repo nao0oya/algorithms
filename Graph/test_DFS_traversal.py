@@ -1,31 +1,30 @@
 from collections import defaultdict
 import unittest
-from BFS_traversal import BFSOperator
+from Graph.DFS_traversal import DFSOperator
 
 
-class TestBFSOperator(unittest.TestCase):
+class TestDFSOperator(unittest.TestCase):
 
     def setUp(self):
-        self.BFS = BFSOperator()
+        self.DFS = DFSOperator()
 
     # テストメソッドの実行が終わるたびに呼ばれる
     def tearDown(self):
-        self.BFS = None
+        self.DFS = None
 
-    def testBFS(self):
+    def testDFS(self):
         # グラフの準備
-        g = self.BFS
+        g = self.DFS
+        g.addEdge(2, 0)
         g.addEdge(0, 1)
         g.addEdge(0, 2)
         g.addEdge(1, 2)
-        g.addEdge(2, 0)
         g.addEdge(2, 3)
         g.addEdge(3, 3)
 
-        # print ("BFT開始(頂点番号2からスタート)")
-        g.traverseVertixs(2)
+        g.DFS()
 
-        self.assertListEqual([2,0,3,1], g.output)
+        self.assertListEqual([0,1,2,3], g.output)
 
 if __name__ == "__main__":
     unittest.main()
